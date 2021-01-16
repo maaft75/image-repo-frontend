@@ -1,0 +1,45 @@
+<br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="row rowflex">
+
+              <div *ngFor="let searchResult of privateSearchResults">
+
+                <a href="/imagedetails/{{ searchResult.id }}" style="margin: 5px;">
+
+                  <div>
+
+                    <div class="divone" [ngStyle]="{'background-image': 'url(' + searchResult.imageUrl + ')'}">
+  
+                    </div>
+
+                  </div>
+
+                </a>
+                <div style="width: 250px;margin: 5px;">
+                 
+                  <a href="/imagedetails/{{ searchResult.id }}" style="text-decoration: none;color: blueviolet;">
+                    <b> {{ searchResult.title }} </b>
+                  </a>
+                  <hr>
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div *ngIf="errorPage" style="text-align: center;">
+    <h4>
+        THERE ARE NO RESULTS FOR YOUR SEARCH.
+    </h4>
+    <h5>
+        PLEASE RETRY.
+    </h5>
+</div>
+<br>

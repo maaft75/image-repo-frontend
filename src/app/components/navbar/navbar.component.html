@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href=""><h5>Image-Repo</h5></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <form class="form-inline col-md-8 my-2 my-lg-0">
+        <input class="form-control col-md-9 mr-sm-2"  [(ngModel)]="searchParam"  [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" (click)="Search()">Search</button>
+      </form>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" *ngIf="isLoggedIn">
+          <a class="btn btn-outline-light my-2 my-sm-0 btn-sm" href="/dashboard"> 
+            <b>Dashboard</b> 
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item active" *ngIf="isLoggedIn" (click)="Logout()">
+          <button class="btn btn-outline-light my-2 my-sm-0 btn-sm"><b>Logout</b></button>
+        </li>
+        <li class="nav-item active" *ngIf="!isLoggedIn">
+          <a class="nav-link" href="/registration"> <h6>Registration</h6> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active" *ngIf="!isLoggedIn">
+          <a class="nav-link" href="/login"><h6>Login</h6></a>
+        </li>
+      </ul>
+    </div>
+</nav>

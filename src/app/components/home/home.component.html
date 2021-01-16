@@ -1,0 +1,35 @@
+<br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="row rowflex">
+
+              <div *ngFor="let searchResult of privateImages">
+
+                <a href="/imagedetails/{{ searchResult.id }}" style="margin: 5px;">
+
+                  <div>
+
+                    <div class="divone" [ngStyle]="{'background-image': 'url(' + searchResult.imageUrl + ')'}">
+  
+                    </div>
+
+                  </div>
+
+                </a>
+                <div class="divtwo" style="width: 250px;margin: 5px;">
+                 
+                  <a href="/imagedetails/{{ searchResult.id }}" style="text-decoration: none;color: blueviolet;">
+                    <b> {{ searchResult.title }} </b>
+                  </a>
+                  <hr>
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>

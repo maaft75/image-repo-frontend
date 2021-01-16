@@ -1,0 +1,105 @@
+<br/>
+<div class="majordiv">
+    <br/>
+    <div class="col-sm-6 center">
+        <form [formGroup]="imageForm" (ngSubmit)="postImage()">
+            <br/>
+            <h3 style="text-align: center;">Add Image</h3>
+            <hr/>
+
+            <div class="row cent">
+                <div class="col-sm-10">
+                    <div>
+                        <label for="Title"><b>Title</b></label>
+                        <input type="text" class="form-control col-sm-12" placeholder="Title" name="title" formControlName="title"><br/>
+                    </div>
+        
+                    <div class="alert alert-danger" *ngIf="title.touched && title.errors?.required">
+                        <small> Title is required. </small><br/>
+                    </div>
+                </div>
+    
+                <div class="col-sm-10">
+                    <div>
+                        <label for="tags"><b>Tags</b></label>
+                        <input type="text" class="form-control" placeholder="Tags" name="tags" formControlName="tags"><br/>
+                    </div>
+        
+                    <div class="alert alert-danger" *ngIf="tags.touched && tags.errors?.required">
+                        <small> Tags is/are required. </small><br/>
+                    </div>
+                </div>
+
+                <div class="col-sm-10">
+                    <div>
+                        <label for="status"><b>Status</b></label>
+                        <select class="form-control" placeholder="Status" name="status" formControlName="status">
+                            <option selected>Private</option>
+                            <option>Public</option>
+                        </select> <br>
+                    </div>
+        
+                    <div class="alert alert-danger" *ngIf="status.touched && status.errors?.required">
+                        <small> Status is required. </small><br/>
+                    </div>
+                </div>
+
+                <div class="col-sm-10">
+                    <div>
+
+                        <div class="col-sm-12">
+                            <label for="price"><b>Image</b></label>
+                            <div>
+                                <img [src]="defaultImageUrl" width="200px" height="200px" (click)="fileUploader.click()">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="file" accept="image/*" (change)="showPreview($event)" #fileUploader class="form-control" style="border: none;" name="imageUrl">
+                            </div>
+                            <div class="col-sm-6" *ngIf="uploadingImage && tryUploadImage" style="color: white;">
+                                <a (click)="uploadImage()" class="form-control btn btn-info">Upload</a>
+                            </div>
+                            <div class="col-sm-6" *ngIf="!uploadingImage" style="color: white;">
+                                <a class="form-control btn btn-info">Uploading...</a>
+                            </div>
+                            <div class="col-sm-6" *ngIf="completedUpload" style="color: white;">
+                                <a class="form-control btn btn-info">Done</a>
+                            </div>
+                        </div>
+                        <br/>
+
+                    </div>
+
+                    <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.errors?.required">
+                        <small> Image is required. </small><br/>
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-10">
+                    <div>
+                        <label for="price"><b>Price</b></label>
+                        <input type="number" class="form-control" placeholder="Price" name="price" formControlName="price"><br/>
+                    </div>
+        
+                    <div class="alert alert-danger" *ngIf="price.touched && price.errors?.required">
+                        <small> Price is required. </small><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cent">
+                <button type="submit" [disabled]="!imageForm.valid" class="form-control col-sm-10 btn btn-success">
+                    <h6> Add Image </h6>
+                </button>
+            </div>
+
+            <br/>
+        </form>
+    </div>    
+</div>
+<br/>

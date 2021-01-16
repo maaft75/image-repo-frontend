@@ -1,0 +1,48 @@
+<br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="row rowflex">
+                
+                <div style="margin: 5px;">
+
+                  <div>
+
+                    <div class="divone" [ngStyle]="{'background-image': 'url(' + image.imageUrl + ')'}">
+  
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div style="width: 350px;margin: 5px;">
+                    <a style="text-decoration: none;color: blueviolet;">
+                        <b> {{ image.title }} </b>
+                        
+                        <button (click)="likeImage()" style="float: right;" class="btn btn-sm btn-outline-info">
+                            <b>Like</b>
+                            &nbsp;&nbsp;
+                            <img class="icon" src="https://firebasestorage.googleapis.com/v0/b/image-repo-d5486.appspot.com/o/images%2Flike.png?alt=media&token=4a68a87e-649d-457a-a0ee-92feef1889bd">
+                        </button>
+                    </a>
+
+                    <hr>
+                    <a style="text-decoration: none;color: blueviolet;">
+                        <b> Image from {{ image.user.name }} </b>
+                    </a>
+                    
+                    <hr>
+                    <a style="text-decoration: none;color: blueviolet;">
+                        <b> TAGS : {{ image.tags }} </b>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>

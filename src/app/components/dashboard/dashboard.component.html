@@ -1,0 +1,43 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" style="margin-bottom: 10px;">
+            <a href="/addimage" class="btn btn-info" style="float: right;">Add Image</a>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="row rowflex">
+
+              <div *ngFor="let userImage of userImages">
+
+                <a href="/imagedetails/{{ userImage.id }}" style="margin: 5px;">
+
+                  <div>
+
+                    <div class="divone" [ngStyle]="{'background-image': 'url(' + userImage.imageUrl + ')'}">
+  
+                    </div>
+
+                  </div>
+
+                </a>
+                <div style="width: 250px;margin: 5px;">
+                 
+                  <a href="/imagedetails/{{ userImage.id }}" style="text-decoration: none;color: blueviolet;">
+                    <b> {{ userImage.title }} </b>
+                  </a>
+                  
+                  <button (click)="deleteImage(userImage.id)" style="float: right;" class="btn btn-sm btn-outline-info">
+                    Delete
+                    <img class="icon" src="https://firebasestorage.googleapis.com/v0/b/image-repo-d5486.appspot.com/o/images%2FDelete.png?alt=media&token=ee5e827d-6375-4c3f-8f52-a6a4617cacc6">
+                  </button>
+                  <hr>
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>

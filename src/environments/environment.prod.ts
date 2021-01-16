@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  frontBaseUrl : "http://localhost:4200/",
-  baseUrl : "https://localhost:44361/api/",
+  frontBaseUrl : "https://repo-image.netlify.app/",
+  baseUrl : "https://imagerepo-be.herokuapp.com/api/",
   firebaseConfig : {
     apiKey: "AIzaSyD1iaa_9vpSAAdGspHVJaCPDRWbUZFnYKc",
     authDomain: "image-repo-d5486.firebaseapp.com",

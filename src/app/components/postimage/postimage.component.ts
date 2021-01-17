@@ -100,7 +100,7 @@ export class PostimageComponent implements OnInit {
           alert(`Image : "${data.title}" successfully saved.`);
           window.location.href = environment.frontBaseUrl + "dashboard";
         },
-        (error) => { alert(error.error)}
+        (error) => { alert(error.error); location.reload()}
       )}
     else
     {

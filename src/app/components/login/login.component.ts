@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         window.location.href = environment.frontBaseUrl + "dashboard"
       },
       (error) => { 
-        alert(`An error has occured ${error.error["error"]}`);
+        alert(`An error has occured. ${error.error["error"]}`);
         location.reload();
       }
   )}

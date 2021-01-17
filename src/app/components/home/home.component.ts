@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
       {
         this.allImages = data;
 
-        this.privateImages = this.allImages.filter(
+        this.privateImages = this.allImages.slice(0,21).filter(
         x => 
         {
             return x.status != "Private";

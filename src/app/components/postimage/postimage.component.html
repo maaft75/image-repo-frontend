@@ -46,6 +46,22 @@
 
                 <div class="col-sm-10">
                     <div>
+                        <label for="category"><b>Category</b></label>
+                        <select class="form-control" placeholder="Category" name="Category" formControlName="Category">
+                            <option selected>Fashion</option>
+                            <option>Animal</option>
+                            <option>Food</option>
+                            <option>Animal</option>
+                        </select> <br>
+                    </div>
+        
+                    <div class="alert alert-danger" *ngIf="category.touched && category.errors?.required">
+                        <small> Category is required. </small><br/>
+                    </div>
+                </div>
+
+                <div class="col-sm-10">
+                    <div>
 
                         <div class="col-sm-12">
                             <label for="price"><b>Image</b></label>

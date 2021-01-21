@@ -31,6 +31,7 @@ export class PostimageComponent implements OnInit {
       "imageUrl" : ["", Validators.required],
       "tags" : ["", Validators.required],
       "price" : ["", Validators.required],
+      "category" : ["", Validators.required],
       "status" : ["", Validators.required],
       "user" : this.fb.group({
         "id" : [],
@@ -50,6 +51,7 @@ export class PostimageComponent implements OnInit {
         "imageUrl" : ["", Validators.required],
         "tags" : ["", Validators.required],
         "price" : ["", Validators.required],
+        "category" : ["", Validators.required],
         "status" : ["", Validators.required],
         "user" : {
           "id" : this.loggedInUser.id,
@@ -128,4 +130,7 @@ export class PostimageComponent implements OnInit {
     return this.imageForm.get('imageUrl');
   }
 
+  get category(){
+    return this.imageForm.get('imageUrl');
+  }
 }

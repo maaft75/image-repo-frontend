@@ -131,6 +131,6 @@ export class PostimageComponent implements OnInit {
   }
 
   get category(){
-    return this.imageForm.get('imageUrl');
+    return this.imageForm.get('category');
   }
 }
